@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Python Recording Server{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h4>Python Recording Server</h4>
+	</div>
+</div>
+
+<div class="container">
+	<p><span class="label label-success">server ON</span></p>
+	{% if threadOn %}
+		<p><span class="label label-success">recorder ON</span></p>
+	{% else %}
+		<p><span class="label label-danger">recorder OFF</span></p>
+	{% endif %}
+	<div class="alert alert-info" role="alert">
+		<b>Timestamp: </b>{{ timestamp }}	  
+	</div>
+
+</div>
+{% endblock %}
