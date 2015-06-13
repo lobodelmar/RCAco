@@ -41,7 +41,7 @@ From initial research it seems that we can probably run the whole thing within o
 * posted [here](http://forum.processing.org/two/discussion/11155/record-past-15-seconds-of-microphone-with-minim) to ask about buffer
 
 ## still to do
-* touchboard interaction
+* touchboard interaction (go see bare conductive on Monday)
 * visualization of audio on `externalMonitor`
 
 ## done
