@@ -42,6 +42,7 @@ From initial research it seems that we can probably run the whole thing within o
 
 ## still to do
 * touchboard interaction
+* visualization of audio on `externalMonitor`
 
 ## done
 * pressing 'r' on externalDisplay resets to "waiting..." screen
