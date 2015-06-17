@@ -41,10 +41,12 @@ From initial research it seems that we can probably run the whole thing within o
 * posted [here](http://forum.processing.org/two/discussion/11155/record-past-15-seconds-of-microphone-with-minim) to ask about buffer
 
 ## still to do
-* touchboard interaction (go see bare conductive on Monday)
-* visualization of audio on `externalMonitor`
 
 ## done
+* landing image instead of "waiting for..."
+* double-click functionality
+* touchboard programming
+* visualization of audio on `externalMonitor`
 * pressing 'r' on externalDisplay resets to "waiting..." screen
 * loads history though JSON file and makes it available from boot
 * ability to go and play back old scenes through left and right arrow (<- / ->)
