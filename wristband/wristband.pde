@@ -1,3 +1,8 @@
+//touchboard stuff
+import processing.serial.*;
+Serial myPort;
+int lastTouchTimeStamp = 0;
+
 VideoPlayer videoPlr;
 AudioRecorder audioRec;
 Messenger messenger;
@@ -19,6 +24,7 @@ void setup()
   videoPlr = new VideoPlayer(this, videoFile);
   audioRec = new AudioRecorder(secondsBefore, secondsAfter);
   messenger = new Messenger(this);
+  myPort = new Serial(this, Serial.list()[3], 57600);
 }
 
 void draw()
@@ -35,18 +41,39 @@ void draw()
   }
 }
 
+void recordAudioScape()
+{
+  //String compositeFilename = outputPath + filenameStem + "_" + nf(fileCounter, 5) + ".wav";
+  String compositeFilename = outputPath + filenameStem + "_" + str(int(System.currentTimeMillis()/1000)) + ".wav";
+  
+  //println(System.currentTimeMillis() / 1000);
+  messenger.initialize(videoPlr.chooseScene(), compositeFilename);
+  audioRec.setFilename(compositeFilename);
+  audioRec.record();
+  videoPlr.stayInScene = true;
+  timer = new Timer(secondsAfter*1000 + 1000); //added 1'' delay for safety
+  timer.start();
+  fileCounter++;
+}
+
 void keyPressed()
 {
   if (key=='r')
   {
-    String compositeFilename = outputPath + filenameStem + "_" + nf(fileCounter, 5) + ".wav";
-    messenger.initialize(videoPlr.chooseScene(), compositeFilename);
-    audioRec.setFilename(compositeFilename);
-    audioRec.record();
-    videoPlr.stayInScene = true;
-    timer = new Timer(secondsAfter*1000 + 1000); //added 1'' delay for safety
-    timer.start();
-    fileCounter++;
+    recordAudioScape();
+  }
+}
+
+void serialEvent(Serial p) { 
+  if (p.readString().equals("1"))
+  {
+    //println("touch registered------" + str(millis()-lastTouchTimeStamp));
+    if (millis()-lastTouchTimeStamp<800)
+    {
+      //println("DOUBLE CLICK " + str(frameCount));
+      recordAudioScape();
+    }
+    lastTouchTimeStamp = millis();
   }
 }
 
