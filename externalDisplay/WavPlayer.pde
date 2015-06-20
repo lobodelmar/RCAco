@@ -14,7 +14,9 @@ class WavPlayer
     // we pass this to Minim so that it can load files from the data directory
     minim = new Minim(parent);
     mixerInfo = AudioSystem.getMixerInfo();
-    //println(mixerInfo);
+    println("**** LIST OF AVAILABLE AUDIO PORTS ****");
+    println(mixerInfo);
+    println("**************************************");
     Mixer mixer = AudioSystem.getMixer(mixerInfo[mixerIndex]);
     //println(mixer.getMixerInfo().getName());
     minim.setOutputMixer(mixer);

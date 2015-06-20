@@ -24,7 +24,9 @@ void setup()
   videoPlr = new VideoPlayer(this, videoFile);
   audioRec = new AudioRecorder(secondsBefore, secondsAfter);
   messenger = new Messenger(this);
-  myPort = new Serial(this, Serial.list()[3], 57600);
+
+  try { myPort = new Serial(this, Serial.list()[3], 57600); }
+  catch (Exception e) { println("\n*** Could not find Touchboard. Are you using the right port? ***"); }
 }
 
 void draw()

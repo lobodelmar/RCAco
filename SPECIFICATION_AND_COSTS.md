@@ -41,8 +41,14 @@ From initial research it seems that we can probably run the whole thing within o
 * posted [here](http://forum.processing.org/two/discussion/11155/record-past-15-seconds-of-microphone-with-minim) to ask about buffer
 
 ## still to do
+* make arduino optional 
+* add arduino instructions
+* ask mac installer
+* add in notes to look at list of ports if 2nd sound source does not work
+* make executable
 
 ## done
+* add data folder in wristband, externalDisplay
 * landing image instead of "waiting for..."
 * double-click functionality
 * touchboard programming
