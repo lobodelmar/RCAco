@@ -25,7 +25,7 @@ void setup()
   audioRec = new AudioRecorder(secondsBefore, secondsAfter);
   messenger = new Messenger(this);
 
-  try { myPort = new Serial(this, Serial.list()[3], 57600); }
+  try { myPort = new Serial(this, Serial.list()[3], 57600); } //in MAC it was #2, in mine it was Port #3
   catch (Exception e) { println("\n*** Could not find Touchboard. Are you using the right port? ***"); }
 }
 

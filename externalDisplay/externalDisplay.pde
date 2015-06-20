@@ -33,15 +33,17 @@ void draw()
     //background(0);
     //textSize(20);
     //text(initMsg, width/2-textWidth(initMsg)/2, height/2);
-    image(waitingImg,0,0,width,height);
+    image(waitingImg, 0, 0, width, height);
     wavplr.stop();
   }
 }
 
 void loadScene()
 {
-  sceneImg = loadImage(sceneStack.get().getString("image"));
-  wavplr.loadFile(sceneStack.get().getString("audio"));
+  if (!sceneStack.isEmpty()) {
+    sceneImg = loadImage(sceneStack.get().getString("image"));
+    wavplr.loadFile(sceneStack.get().getString("audio"));
+  }
 }
 
 void keyPressed()

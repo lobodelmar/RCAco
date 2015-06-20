@@ -13,7 +13,7 @@ class SceneStack {
       index = scenesJ.size();
       println(scenesJ.size() + " scene(s) found in history");
     }
-    catch (Exception e){
+    catch (Exception e) {
       scenesJ = new JSONArray();
       println("*** Starting a new Scene History file ***");
     }
@@ -34,7 +34,7 @@ class SceneStack {
   }
 
   JSONObject get() {
-    return scenesJ.getJSONObject(index);
+      return scenesJ.getJSONObject(index);
   }
   void next() {
     index++;
@@ -49,6 +49,10 @@ class SceneStack {
   }
   void loadSoundScapeHistory(String filename) {
     JSONArray values = loadJSONArray(filename);
+  }
+  boolean isEmpty() 
+  {
+    return (scenesJ.size()==0) ? true : false;        
   }
 }
 
