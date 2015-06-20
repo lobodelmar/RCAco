@@ -1,11 +1,11 @@
 [
    {
-     "name": "yellowSunset",
+     "name": "southbanklong",
      "from": 0,
      "to": 6500
    },
    {
-     "name": "redSunset",
+     "name": "albertMemorial",
      "from": 6500,
      "to": 12000 
    }

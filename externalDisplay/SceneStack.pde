@@ -29,8 +29,6 @@ class SceneStack {
     saveJSONArray(scenesJ, historyFilename);
     println("saving file here: " + historyFilename);
     index = scenesJ.size()-1;
-    //newScene = null;
-    //SAVE TO DISK
   }
 
   JSONObject get() {

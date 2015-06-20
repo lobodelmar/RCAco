@@ -28,7 +28,6 @@ class WavPlayer
   {
     if (player==null)
     {
-      //println(filename);
       player = minim.loadFile(filename);
       player.loop();
     } else {
